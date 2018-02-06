@@ -1,0 +1,43 @@
+import javax.swing.JOptionPane;
+
+//© A+ Computer Science  -  www.apluscompsci.com
+//Name - Delara Aryan
+//Date - 2/1/18
+//Class - Period 2
+//Lab  - 0b
+
+public class Lab0b
+{
+	public static void main ( String[] args )
+	{
+		//define 1 variable of each of the
+		//following data types
+		//byte		short		int 		long
+		//float		double
+		//char      boolean		String
+
+		//integer variables
+		byte b = Byte.parseByte(JOptionPane.showInputDialog("Enter a byte."));
+		short s = Short.parseShort(JOptionPane.showInputDialog("Enter a short."));
+		int i = Integer.parseInt(JOptionPane.showInputDialog("Enter an integer."));
+		long l = Long.parseLong(JOptionPane.showInputDialog("Enter a long."));
+
+		//decimal variables
+		float f = Float.parseFloat(JOptionPane.showInputDialog("Enter a float."));
+		double d = Double.parseDouble(JOptionPane.showInputDialog("Enter a double."));
+
+		//other integer types
+		char c = JOptionPane.showInputDialog("Enter a char.").charAt(0);
+
+		//other types
+		String st = JOptionPane.showInputDialog("Enter a string.");
+
+		//output your information here
+		System.out.println("/////////////////////////////////");
+		System.out.println("*Jim Bob                08/18/06*");
+		System.out.println("*                               *");
+		System.out.println("*        integer types          *");
+		System.out.println("*                               *");
+		System.out.println("*8 bit - byteOne = "+byteOne+"\t\t*");
+	}
+}

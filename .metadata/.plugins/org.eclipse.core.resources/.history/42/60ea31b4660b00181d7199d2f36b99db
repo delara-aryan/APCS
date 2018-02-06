@@ -1,0 +1,25 @@
+//© A+ Computer Science  -  www.apluscompsci.com
+
+public class Lab02e
+{
+	public static void main( String[] args ) {
+		Circle c1 = new Circle();
+		c1.setRadius(2.0);
+		c1.print();
+		Circle c2 = new Circle();
+		c2.setRadius(47.9);
+		c2.print();
+		Circle c3 = new Circle();
+		c3.setRadius(47.9);
+		c3.print();
+		Circle c4 = new Circle();
+		c4.setRadius(47.9);
+		c4.print();
+		Circle c5 = new Circle();
+		c5.setRadius(47.9);
+		c5.print();
+		Circle c6 = new Circle();
+		c6.setRadius(47.9);
+		c6.print();
+	}
+}
