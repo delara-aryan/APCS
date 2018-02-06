@@ -17,7 +17,6 @@ public class Circle
 
 	public void print( )
 	{
-		calculateArea();
 		System.out.println("The area is: " + area);
 	}
 }
