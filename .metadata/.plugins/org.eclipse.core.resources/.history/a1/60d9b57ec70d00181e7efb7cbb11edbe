@@ -27,12 +27,18 @@ public class StringChecker
 
 	public boolean findLetter(char c)
 	{
-		return word.contains(c + "");
+		if (word.contains(c + "")) {
+			return true;
+		}
+		return false;
 	}
 
 	public boolean findSubString(String s)
 	{
-		return word.contains(s);
+		if (word.contains(s)) {
+			return true;
+		}
+		return false;
 	}
 
  	public String toString()
