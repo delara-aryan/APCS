@@ -48,14 +48,8 @@ public class Magpie2
 		else if (statement.contains("Mauro")) {
 			response = "He sounds like a good teacher.";
 		}
-		else if (statement.trim().length() < 1) {
+		else if (response.trim().length() < 1) {
 			response = "Say something, please.";
-		} else if (statement.contains("food")) {
-			response = "What's your favorite food?";
-		} else if (statement.contains("lol") || statement.contains("ha")) {
-			response = "What's so funny?";
-		} else if (statement.contains("school")) {
-			response = "Where do you go to school?";
 		}
 		else
 		{

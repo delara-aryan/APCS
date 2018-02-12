@@ -48,15 +48,6 @@ public class Magpie2
 		else if (statement.contains("Mauro")) {
 			response = "He sounds like a good teacher.";
 		}
-		else if (statement.trim().length() < 1) {
-			response = "Say something, please.";
-		} else if (statement.contains("food")) {
-			response = "What's your favorite food?";
-		} else if (statement.contains("lol") || statement.contains("ha")) {
-			response = "What's so funny?";
-		} else if (statement.contains("school")) {
-			response = "Where do you go to school?";
-		}
 		else
 		{
 			response = getRandomResponse();
@@ -70,7 +61,7 @@ public class Magpie2
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 6;
+		final int NUMBER_OF_RESPONSES = 4;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -90,10 +81,6 @@ public class Magpie2
 		else if (whichResponse == 3)
 		{
 			response = "You don't say.";
-		} else if (whichResponse == 4) {
-			response = "Is that so?";
-		} else if (whichResponse == 5) {
-			response = "That's cool.";
 		}
 
 		return response;
