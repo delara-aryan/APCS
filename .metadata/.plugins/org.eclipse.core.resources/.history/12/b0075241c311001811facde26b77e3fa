@@ -38,10 +38,6 @@ public class Prime
 
 	public String toString()
 	{
-		if (isPrime()) {
-			return number + " is prime.";
-		} else {
-			return number + " is not prime.";
-		}
+		return number;
 	}
 }

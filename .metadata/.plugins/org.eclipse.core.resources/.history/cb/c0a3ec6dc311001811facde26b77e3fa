@@ -19,7 +19,6 @@ public class Lab08i
 			int prime = keyboard.nextInt();
 			p.setPrime(prime);
 			System.out.println(p);
-			System.out.println();
 		}		
 	}	
 }

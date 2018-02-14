@@ -13,7 +13,8 @@ public class Prime
 
 	public Prime()
 	{
-		setPrime(0);
+
+
 	}
 
 	public Prime(int num)
@@ -28,20 +29,26 @@ public class Prime
 
 	public boolean isPrime()
 	{
-		for (int i = 2; i < number; i++) {
-			if (number % i == 0) {
-				return false;
-			}
-		}
+
+
+
+
+
+
+
 		return true;
 	}
 
 	public String toString()
 	{
-		if (isPrime()) {
-			return number + " is prime.";
-		} else {
-			return number + " is not prime.";
-		}
+		String output="";
+
+
+
+
+
+
+
+		return output;
 	}
 }

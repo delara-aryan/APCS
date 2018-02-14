@@ -25,7 +25,6 @@ public class Lab08g
 			System.out.println("total: " + ls.getTotal());
 			System.out.println("even count: " + ls.getEvenCount());
 			System.out.println("odd count: " + ls.getOddCount());
-			System.out.println();
 		}
 	}
 }
