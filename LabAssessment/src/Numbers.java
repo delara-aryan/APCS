@@ -4,7 +4,7 @@ public class Numbers {
 
 	public static void main(String[] args) {
 		for (int i = 1; i <= 20; i++) {
-			System.out.println(Arrays.toString(getSomeGoofyNumbers(i)));			
+			System.out.println(Arrays.toString(getSomeGoofyNumbers(i)));
 		}
 	}
 
@@ -32,9 +32,9 @@ public class Numbers {
 		int n = 1;
 		if (count > 0) {
 			for (int i = 0; i < goofyNumbers.length; i++) {
-				while(!isGoofy(n)) {
+				while (!isGoofy(n)) {
 					n++;
- 				}
+				}
 				goofyNumbers[i] = n;
 				n++;
 			}
