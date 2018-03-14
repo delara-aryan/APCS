@@ -26,6 +26,7 @@ public class Grades
 	public void setGrades(String gradeList)
 	{
 		Scanner s  = new Scanner(gradeList);
+		
 		int size = s.nextInt();
 		grades = new double[size];
 		s.next();
