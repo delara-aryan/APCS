@@ -5,13 +5,14 @@
 //Lab  -
 
 import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Scanner;
 import static java.lang.System.*;
 import static java.util.Arrays.*;
 
 public class Grades
 {
-	private double[] grades;
+	private ArrayList<Double> grades;;
 	
 	public Grades()
 	{
@@ -28,19 +29,19 @@ public class Grades
 		Scanner s  = new Scanner(gradeList);
 		
 		int size = s.nextInt();
-		grades = new double[size];
+		grades = new ArrayList<Double>();
 		s.next();
 		int i = 0;
 		while (s.hasNext()) {
 			double grade = s.nextDouble();
-			grades[i] = grade;
+			grades.add(grade);
 			i++;
 		}
 	}
 	
 	public void setGrade(int spot, double grade)
 	{
-		grades[spot] = grade;
+		grades.set(spot, grade);
 	}
 	
 	public double getSum()
@@ -76,7 +77,7 @@ public class Grades
 	
 	public int getNumGrades()
 	{
-		return grades.length;
+		return grades.size();
 	}
 	
 	public String toString()
