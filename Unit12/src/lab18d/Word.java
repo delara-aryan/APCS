@@ -24,7 +24,9 @@ public class Word implements Comparable<Word>
 			return -1;
 		} else {
 			for (int i = 0; i < word.length(); i++) {
-				if()
+				if(word.charAt(i) < w.charAt(i)) {
+					return 
+				}
 			}
 		}
 	}
