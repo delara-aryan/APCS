@@ -4,7 +4,7 @@
 //Class -
 //Lab  -
 
-import java.io.File;
+import java.io.File; 
 import java.io.IOException;
 import java.util.Scanner;
 import static java.lang.System.*;
@@ -12,6 +12,7 @@ import static java.lang.System.*;
 public class Maze
 {
    private int[][] maze;
+   private boolean exitFound;
 
 	public Maze()
 	{
@@ -20,6 +21,7 @@ public class Maze
 
 	public Maze(int size, String line)
 	{
+		exitFound = false;
 		Scanner s = new Scanner(line);
 		maze = new int[size][size];
 		for (int i = 0; i < maze.length; i++) {
@@ -34,7 +36,7 @@ public class Maze
 		if (r >= 0 && r < maze.length && c >= 0 && c < maze[r].length && maze[r][c] == 1) {
 			maze[r][c] = 0;
 			if (c == maze[r].length - 1) {
-				return true;
+				exitFound = true;
 			} else {
 				hasExitPath(r - 1, c);
 				hasExitPath(r + 1, c);
@@ -42,7 +44,7 @@ public class Maze
 				hasExitPath(r, c - 1);
 			}
 		}
-		return false;
+		return exitFound;
 	}
 
 	public String toString()
@@ -52,13 +54,14 @@ public class Maze
 			for (int j = 0; j < maze[i].length; j++) {
 				output += maze[i][j] + " ";
 			}
-			output += "/n";
+			output += "\n";
 		}
 		if (hasExitPath(0,0)) {
 			output += "exit found";
 		} else {
 			output += "exit not found";
 		}
+		output += "\n";
 		return output;
 	}
 }
