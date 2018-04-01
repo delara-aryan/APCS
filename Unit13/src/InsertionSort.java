@@ -1,3 +1,4 @@
+
 //© A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
@@ -9,51 +10,26 @@ import java.util.Arrays;
 import java.util.Collections;
 import static java.lang.System.*;
 
-class InsertionSort
-{
+class InsertionSort {
 	private ArrayList<String> list;
 
-	public InsertionSort()
-	{
-
-list= new ArrayList<String>();
-
+	public InsertionSort() {
+		list = new ArrayList<String>();
 	}
 
-	//modfiers
-	public void add( String  word)
-	{
+	// modifiers
+	public void add(String word) {
 		int loc = Collections.binarySearch(list, word);
-		if(loc<0)
-		{
-			list.add(Math.abs((loc+1)), word);
+		if (loc < 0) {
+			list.add(Math.abs((loc + 1)), word);
 		}
-		
-
-
-
-
-
 	}
 
-
-	public void remove(String word)
-	{
-
-for (String l : list) {
-	if(word.equals(1))
-	{
+	public void remove(String word) {
 		list.remove(word);
 	}
-}
 
-
-
-
-	}
-
-	public String toString()
-	{
+	public String toString() {
 		return Arrays.toString(list.toArray());
 	}
 }
