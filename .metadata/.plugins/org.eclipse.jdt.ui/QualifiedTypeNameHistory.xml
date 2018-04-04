@@ -10,4 +10,6 @@
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="javax.swing.SwingUtilities"/>
+<fullyQualifiedTypeName name="javax.swing.JLabel"/>
 </qualifiedTypeNameHistroy>

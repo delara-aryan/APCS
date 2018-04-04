@@ -51,30 +51,17 @@ public class Ball extends Block {
 	public void setYSpeed(int ys) {
 		ySpeed = ys;
 	}
-	
-	@Override
-	public void draw(Graphics window) {
-		// uncomment after you write the set and get methods
-		window.setColor(getColor());
-		window.fillOval(getX(), getY(), getWidth(), getHeight());
-	}
-	
-	@Override
-	public void draw(Graphics window, Color col) {
-		window.setColor(col);
-		window.fillOval(getX(), getY(), getWidth(), getHeight());
-	}
 
 	public void moveAndDraw(Graphics window) {
 		// draw a white ball at old ball location
 		window.setColor(Color.WHITE);
-		window.fillOval(getX(), getY(), getWidth(), getHeight());
+		window.fillRect(getX(), getY(), getWidth(), getHeight());
 		setX(getX() + xSpeed);
 		// setY
 		setY(getY() + ySpeed);
 		// draw the ball at its new location
 		window.setColor(getColor());
-		window.fillOval(getX(), getY(), getWidth(), getHeight());
+		window.fillRect(getX(), getY(), getWidth(), getHeight());
 	}
 
 	public boolean equals(Object obj) {

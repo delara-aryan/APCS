@@ -5,6 +5,8 @@
 //Lab  -
 
 import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
 import java.awt.Component;
 
 public class Tester extends JFrame
@@ -25,7 +27,7 @@ public class Tester extends JFrame
 		PaddleTestTwo padTest = new PaddleTestTwo();
 		((Component)padTest).setFocusable(true);			
 		getContentPane().add(padTest);
-				
+		//SwingUtilities.invokeLater(padTest);
 		setVisible(true);
 	}
 	
