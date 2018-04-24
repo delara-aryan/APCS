@@ -1,4 +1,3 @@
-
 /**
  * This class contains class (static) methods that will help you test the
  * Picture class methods. Uncomment the methods and the code in the main to
@@ -115,6 +114,26 @@ public class PictureTester {
 		swan.explore();
 	}
 
+	public static void testMirrorDiagonal() {
+		Picture swan = new Picture("swan.jpg");
+		swan.mirrorDiagonal();
+		swan.explore();
+	}
+
+	public static void testEdgeDetection2() {
+		Picture swan = new Picture("swan.jpg");
+		// swan.explore();
+		swan.edgeDetection2(30);
+		swan.explore();
+	}
+
+	public static void testFixUnderwater() {
+		Picture water = new Picture("water.jpg");
+		water.explore();
+		water.fixUnderwater();
+		water.explore();
+	}
+
 	/**
 	 * Main method for testing. Every class can have a main method in Java
 	 */
@@ -127,6 +146,7 @@ public class PictureTester {
 		// testKeepOnlyRed(); //done
 		// testKeepOnlyGreen(); //done
 		// testNegate(); //done
+		// testFixUnderwater();
 		// testGrayscale(); //done
 		// testMirrorVertical(); //done
 		// testMirrorVerticalRightToLeft(); //done
@@ -134,8 +154,8 @@ public class PictureTester {
 		// testMirrorHorizontalBotToTop(); //done
 		// testMirrorTemple(); //done
 		// testMirrorArms(); //done
-		// testMirrorGull();
-		// testMirrorDiagonal();
+		// testMirrorGull(); //done
+		// testMirrorDiagonal(); //done
 		// testCollage();
 		// testCopy();
 		// testEdgeDetection();
