@@ -404,6 +404,53 @@ public class Picture extends SimplePicture {
 		}
 	}
 
+	public void sharpen(int x, int y, int w, int h) {
+		System.out.println("Delara Aryan");
+		System.out.println("Period 2");
+		System.out.println("4/24/18");
+		System.out.println("Computer #08");
+		Pixel[][] pixels = this.getPixels2D();
+		Pixel topLeft = null;
+		Pixel current = null;
+		if (x == 0) {
+			x++;
+		}
+		if (y == 0) {
+			y++;
+		}
+		for (int row = y; row <= h; row++) {
+			for (int col = x; col <= w; col++) {
+				current = pixels[row][col];
+				topLeft = pixels[row - 1][col - 1];
+				int newRed = current.getRed() + (current.getRed() - topLeft.getRed()) / 2;
+				if (newRed > 255) {
+					current.setRed(255);
+				} else if (newRed < 0) {
+					current.setRed(0);
+				} else {
+					current.setRed(newRed);
+				}
+				int newGreen = current.getGreen() + (current.getGreen() - topLeft.getGreen()) / 2;
+				if (newGreen > 255) {
+					current.setGreen(255);
+				} else if (newGreen < 0) {
+					current.setGreen(0);
+				} else {
+					current.setGreen(newGreen);
+				}
+				int newBlue = current.getBlue() + (current.getBlue() - topLeft.getBlue()) / 2;
+				if (newBlue > 255) {
+					current.setBlue(255);
+				} else if (newBlue < 0) {
+					current.setBlue(0);
+				} else {
+					current.setBlue(newBlue);
+				}
+			}
+
+		}
+	}
+
 	/*
 	 * Main method for testing - each class in Java can have a main method
 	 */

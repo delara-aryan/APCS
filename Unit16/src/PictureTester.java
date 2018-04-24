@@ -133,6 +133,12 @@ public class PictureTester {
 		water.fixUnderwater();
 		water.explore();
 	}
+	
+	public static void testSharpen(int x, int y, int w, int h) {
+		Picture redMoto = new Picture("redMotorcycle.jpg");
+		redMoto.sharpen(x, y, w, h);
+		redMoto.explore();
+	}
 
 	/**
 	 * Main method for testing. Every class can have a main method in Java
@@ -166,5 +172,6 @@ public class PictureTester {
 		// testSetRedToHalfValueInTopHalf();
 		// testClearBlueOverValue(200);
 		// testGetAverageForColumn(0);
+		testSharpen(0, 0, 500, 400);
 	}
 }
