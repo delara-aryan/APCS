@@ -366,5 +366,9 @@ public class Pixel
       " green=" + getGreen() + 
       " blue=" + getBlue();
   }
+  
+  public boolean equals(Pixel p) {
+	  return getRed() == p.getRed() && getGreen() == p.getGreen() && getBlue() == p.getBlue();
+  }
 
 }

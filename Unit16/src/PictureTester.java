@@ -139,6 +139,14 @@ public class PictureTester {
 		redMoto.sharpen(x, y, w, h);
 		redMoto.explore();
 	}
+	
+	public static void testEncodeDecode() {
+		Picture beach = new Picture("beach.jpg");
+		beach.explore();
+		beach.encode(new Picture("msg.jpg"));
+		beach.explore();
+		beach.decode().explore();
+	}
 
 	/**
 	 * Main method for testing. Every class can have a main method in Java
@@ -172,6 +180,7 @@ public class PictureTester {
 		// testSetRedToHalfValueInTopHalf();
 		// testClearBlueOverValue(200);
 		// testGetAverageForColumn(0);
-		testSharpen(0, 0, 500, 400);
+		// testSharpen(0, 0, 500, 400);
+		testEncodeDecode();
 	}
 }
