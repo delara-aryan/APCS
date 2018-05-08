@@ -477,15 +477,42 @@ public class Picture extends SimplePicture {
 		Pixel[][] currPixels = this.getPixels2D();
 		Pixel currPixel = null;
 		Pixel messagePixel = null;
+		Pixel rightPixel = null;
 		for (int row = 0; row < this.getHeight(); row++) {
-			for (int col = 0; col < this.getWidth(); col++) {
+			for (int col = 0; col < this.getWidth() - 1; col++) {
 				currPixel = currPixels[row][col];
-				messagePixel = messagePixels[row][col];
-				if (messagePixel.colorDistance(Color.BLACK) < 50) {
-					currPixel = currPixels[row][col - 1];
+				rightPixel = currPixels[row][col + 1];
+				if (currPixel.equals(rightPixel)) {
+					currPixel.setRed(currPixel.getRed() + 1);
+					currPixel.setGreen(currPixel.getGreen() + 1);
+					currPixel.setBlue(currPixel.getBlue() + 1);
 				}
 			}
 		}
+		int col = 0;
+		for (int row = 0; row < messagePict.getHeight(); row++) {
+			while(col < messagePict.getWidth()) {
+				currPixel = currPixels[row][col];
+				messagePixel = messagePixels[row][col];
+				if (messagePixel.colorDistance(Color.BLACK) < 50) {
+					rightPixel = currPixels[row][col + 1];
+					currPixel.setColor(rightPixel.getColor());
+					col += 2;
+				} else {
+					col++;
+				}
+			}
+		}
+		/*for (int row = 0; row < messagePict.getHeight(); row++) {
+			for (int col = 0; col < messagePict.getWidth(); col++) {
+				currPixel = currPixels[row][col];
+				messagePixel = messagePixels[row][col];
+				if (messagePixel.colorDistance(Color.BLACK) < 50) {
+					rightPixel = currPixels[row][col + 1];
+					currPixel.setColor(rightPixel.getColor());
+				}
+			}
+		} */
 	}
 
 	/**
@@ -511,19 +538,18 @@ public class Picture extends SimplePicture {
 		int height = this.getHeight();
 		int width = this.getWidth();
 		Pixel currPixel = null;
-		Pixel leftPixel = null;
+		Pixel rightPixel = null;
 		Pixel messagePixel = null;
 		Picture messagePicture = new Picture(height, width);
 		Pixel[][] messagePixels = messagePicture.getPixels2D();
 		for (int row = 0; row < this.getHeight(); row++) {
-			for (int col = 0; col < this.getWidth(); col++) {
-				if (col != 0) {
-					currPixel = pixels[row][col];
-					leftPixel = pixels[row][col - 1];
-					messagePixel = messagePixels[row][col];
-					if (currPixel.equals(leftPixel)) {
-						messagePixel.setColor(Color.BLACK);
-					}
+			for (int col = 0; col < this.getWidth() - 1; col++) {
+				currPixel = pixels[row][col];
+				rightPixel = pixels[row][col + 1];
+				messagePixel = messagePixels[row][col];
+				if (currPixel.equals(rightPixel)) {
+					messagePixel.setColor(Color.BLACK);
+					//messagePixels[row][col + 1].setColor(Color.BLACK);
 				}
 			}
 		}
