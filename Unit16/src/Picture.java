@@ -477,43 +477,39 @@ public class Picture extends SimplePicture {
 		Pixel[][] currPixels = this.getPixels2D();
 		Pixel currPixel = null;
 		Pixel messagePixel = null;
-		Pixel rightPixel = null;
+		Pixel leftPixel = null;
 		for (int row = 0; row < this.getHeight(); row++) {
-			for (int col = 0; col < this.getWidth() - 1; col++) {
+			for (int col = 1; col < this.getWidth() - 1; col++) {
 				currPixel = currPixels[row][col];
-				rightPixel = currPixels[row][col + 1];
-				if (currPixel.equals(rightPixel)) {
+				leftPixel = currPixels[row][col - 1];
+				if (currPixel.equals(leftPixel)) {
 					currPixel.setRed(currPixel.getRed() + 1);
 					currPixel.setGreen(currPixel.getGreen() + 1);
 					currPixel.setBlue(currPixel.getBlue() + 1);
 				}
 			}
 		}
-		int col = 0;
 		for (int row = 0; row < messagePict.getHeight(); row++) {
-			while(col < messagePict.getWidth()) {
+			for (int col = 1; col < messagePict.getWidth(); col+=2) {
 				currPixel = currPixels[row][col];
 				messagePixel = messagePixels[row][col];
 				if (messagePixel.colorDistance(Color.BLACK) < 50) {
-					rightPixel = currPixels[row][col + 1];
-					currPixel.setColor(rightPixel.getColor());
-					col += 2;
-				} else {
-					col++;
+					leftPixel = currPixels[row][col - 1];
+					currPixel.setColor(leftPixel.getColor());
 				}
 			}
 		}
-		/*for (int row = 0; row < messagePict.getHeight(); row++) {
-			for (int col = 0; col < messagePict.getWidth(); col++) {
-				currPixel = currPixels[row][col];
-				messagePixel = messagePixels[row][col];
-				if (messagePixel.colorDistance(Color.BLACK) < 50) {
-					rightPixel = currPixels[row][col + 1];
-					currPixel.setColor(rightPixel.getColor());
-				}
-			}
-		} */
 	}
+
+	/*
+	 * for (int row = 0; row < messagePict.getHeight(); row++) { for (int col =
+	 * 0; col < messagePict.getWidth(); col++) { currPixel =
+	 * currPixels[row][col]; messagePixel = messagePixels[row][col]; if
+	 * (messagePixel.colorDistance(Color.BLACK) < 50) { rightPixel =
+	 * currPixels[row][col + 1]; currPixel.setColor(rightPixel.getColor()); } }
+	 * }
+	 */
+	
 
 	/**
 	 * Method to decode a message hidden in the red value of the current picture
@@ -538,18 +534,18 @@ public class Picture extends SimplePicture {
 		int height = this.getHeight();
 		int width = this.getWidth();
 		Pixel currPixel = null;
-		Pixel rightPixel = null;
+		Pixel leftPixel = null;
 		Pixel messagePixel = null;
 		Picture messagePicture = new Picture(height, width);
 		Pixel[][] messagePixels = messagePicture.getPixels2D();
 		for (int row = 0; row < this.getHeight(); row++) {
-			for (int col = 0; col < this.getWidth() - 1; col++) {
+			for (int col = 1; col < this.getWidth() - 1; col++) {
 				currPixel = pixels[row][col];
-				rightPixel = pixels[row][col + 1];
+				leftPixel = pixels[row][col - 1];
 				messagePixel = messagePixels[row][col];
-				if (currPixel.equals(rightPixel)) {
+				if (currPixel.equals(leftPixel)) {
 					messagePixel.setColor(Color.BLACK);
-					//messagePixels[row][col + 1].setColor(Color.BLACK);
+					// messagePixels[row][col + 1].setColor(Color.BLACK);
 				}
 			}
 		}
